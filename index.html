@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Math Tables</title>
+    <style>
+        @keyframes slideup{
+            from{
+                margin-top: 400px;
+                opacity: 0;
+            }
+            to{
+                margin-top: 20px;
+                opacity: 1;
+            }
+        }
+        body{
+            background-color: rgba(117, 117, 117, 0.312);
+        }
+        h1{
+            text-align: center;
+            color: rgba(60, 60, 60, 0.734);
+        }
+        .input{
+            background-color: rgb(2, 249, 241);
+            padding: 20px;
+            width: 500px;
+            margin: auto;
+            text-align: center;
+            border-radius: 7px;
+        }
+        .container{
+            background-color: white;
+            width: fit-content;
+            margin: auto;
+            border-radius: 10px;
+            padding: 10px;
+             box-shadow: 5px 5px 10px rgba(128, 128, 128, 0.545);
+        }
+        input{
+            height: 30px;
+            border-color: rgb(201, 201, 201);
+            border-radius: 5px;
+            border-bottom: 3px solid  #b313f8;
+        }
+        button{
+            background-color: #b313f8;
+            color:white;
+            font-size: 20px;
+            font-weight: 500;
+            padding: 5px;
+            width: 65px;
+            border: none;
+            border-radius: 5px;
+            margin: 10px;
+            box-shadow: 2px 2px 5px white;
+        }
+        button:active{
+            transform: scale(0.9);
+            transition: all 400ms ease;
+        }
+        .table{
+            display: none;
+            text-align: center;
+            background-color: #f3206a;
+            width: fit-content;
+            padding: 30px;
+            margin: 20px auto;
+            color: white;
+            font-weight: 500;
+            font-size: 20px;
+            border-radius: 10px;
+            box-shadow: 5px 5px 10px rgba(128, 128, 128, 0.545);
+            animation: slideup 1s ease-out;
+        }
+        @media screen and (max-width:500px){
+            .input{
+                width: 200px;
+            }
+            
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+    <h1>Multiplication Tables</h1>
+    <div class="input">
+        <input type="number" placeholder="Enter Number To print Table" id="number">
+        <button id="get">Get</button>
+    </div>
+    <div class="table"></div>
+    </div>
+    <script>
+        let number=document.getElementById('number');
+        let get=document.getElementById('get');
+        let table=document.querySelector('.table');
+        get.addEventListener("click",()=>{
+            table.innerHTML="";
+           
+            num=number.value;
+            if(!table.innerText && num){
+                 table.style.display="block";
+            for(let i=1;i<=10;i++){
+                table.innerHTML+=`${num} x ${i} = ${(num*i)}<br>`
+            }
+            console.log("hello");
+        }
+
+        })
+    </script>
+</body>
+</html>
